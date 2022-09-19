@@ -1,16 +1,33 @@
-version: '3'
+version: '3.8'
+
 services:
-  database:
-    container_name: postgres_cnt
-    image: postgres
-    ports:
-      - 5432:5432
-    volumes:
-      - pgdata:/var/libs/postgresql/data
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=1234
-      - POSTGRES_DB=users_db
-    restart: always
+    admin:        
+        container_name: admin
+        image: prateek73/admin:v2
+        ports:
+        - 8000:8000
+
+    farmer:        
+        container_name: farmer
+        image: prateek73/farmer:v2
+        ports:
+        - 8100:8100
+    
+    suppplier:  
+        container_name: supplier      
+        image: prateek73/supplier:v2
+        ports:
+        - 8200:8200
+
+    postgres:  
+        container_name: postgres      
+        image: postgres:13.3
+        ports:
+        - 5432:5432
+        restart: always
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: 1234
+            POSTGRES_DB: farmers_db
 volumes:
-  pgdata:
+  pgdata:    
