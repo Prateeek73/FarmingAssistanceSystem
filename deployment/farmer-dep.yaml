@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: farmer
-        image: prateek73/farmer:v2
+        image: prateek73/farmer:v3
         ports:
         - containerPort: 8100

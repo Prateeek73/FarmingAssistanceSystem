@@ -3,31 +3,28 @@ version: '3.8'
 services:
     admin:        
         container_name: admin
-        image: prateek73/admin:v2
+        image: prateek73/admin:v3
         ports:
         - 8000:8000
-
+    
     farmer:        
         container_name: farmer
-        image: prateek73/farmer:v2
+        image: prateek73/farmer:v3
         ports:
         - 8100:8100
     
     suppplier:  
         container_name: supplier      
-        image: prateek73/supplier:v2
+        image: prateek73/supplier:v3
         ports:
         - 8200:8200
-
+      
     postgres:  
         container_name: postgres      
         image: postgres:13.3
         ports:
         - 5432:5432
-        restart: always
         environment:
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: 1234
-            POSTGRES_DB: farmers_db
-volumes:
-  pgdata:    
+            POSTGRES_DB: fas_db

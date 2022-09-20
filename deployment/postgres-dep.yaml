@@ -23,4 +23,4 @@ spec:
             - name: POSTGRES_PASSWORD
               value:  "1234"
             - name: POSTGRES_DB
-              value: users_db
+              value: fas_db
